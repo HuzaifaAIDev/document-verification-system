@@ -165,6 +165,6 @@ Muhammad Huzaifa
 
 BS Artificial Intelligence
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/HuzaifaAIDev
 
 LinkedIn: https://linkedin.com/in/yourprofile
