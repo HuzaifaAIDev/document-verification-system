@@ -1,12 +1,7 @@
 """Centralized application configuration."""
 import os
-settings = Settings()
 
-print("SECRET_KEY from os.getenv:", repr(os.getenv("SECRET_KEY")))
-print("Settings.SECRET_KEY:", repr(settings.SECRET_KEY))
 
-if not settings.SECRET_KEY:
-    raise RuntimeError("SECRET_KEY missing. Copy .env.example to .env and set SECRET_KEY.")
 
 
 def _bool(name: str, default: bool = False) -> bool:
@@ -78,6 +73,11 @@ class Settings:
 
 
 settings = Settings()
+
+
+
+print("SECRET_KEY from os.getenv:", repr(os.getenv("SECRET_KEY")))
+print("Settings.SECRET_KEY:", repr(settings.SECRET_KEY))
 
 if not settings.SECRET_KEY:
     raise RuntimeError("SECRET_KEY missing. Copy .env.example to .env and set SECRET_KEY.")
