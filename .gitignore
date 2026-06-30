@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.db
+*.sqlite3
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/logs/*
+!backend/logs/.gitkeep
+backend/.env
+
+# Node
+node_modules/
+dist/
+frontend/.env
+
+# Misc
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.db
+*.sqlite3
+
+# Uploads & Logs
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/logs/*
+!backend/logs/.gitkeep
+
+# Node
+node_modules/
+dist/
+frontend/dist/
+frontend/.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
