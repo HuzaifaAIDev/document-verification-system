@@ -8,11 +8,9 @@
 ![JWT](https://img.shields.io/badge/Auth-JWT-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-# Document Verification System
-
 An **enterprise-grade full-stack document verification platform** designed for secure document submission, verification, and management workflows.
 
-The system provides **role-based access control**, **OTP verification**, **JWT authentication with refresh token rotation**, **OCR document extraction**, **audit logging**, and a modern **React dashboard** for employees, verifiers, and administrators.
+The system provides **role-based access control (RBAC)**, **OTP verification**, **JWT authentication with refresh token rotation**, **OCR-powered document extraction**, **audit logging**, and a modern **React dashboard** for employees, verifiers, and administrators.
 
 Built using **FastAPI**, **React**, **PostgreSQL**, **Docker**, and industry-standard security practices.
 
@@ -107,7 +105,7 @@ All sensitive actions are recorded including:
 - User management
 - Role changes
 - Administrative actions
-- Client IP address
+- Client IP addresses
 - User agent information
 
 ---
@@ -207,6 +205,7 @@ document_verification_system/
 │   ├── alembic/
 │   ├── tests/
 │   ├── seed.py
+│   ├── requirements.txt
 │   ├── Dockerfile
 │   └── .env.example
 │
@@ -219,9 +218,11 @@ document_verification_system/
 │   │   ├── context/
 │   │   └── routes/
 │   │
+│   ├── package.json
+│   ├── tailwind.config.js
+│   ├── vite.config.js
 │   ├── Dockerfile
-│   ├── nginx.conf
-│   └── package.json
+│   └── nginx.conf
 │
 └── docker-compose.yml
 ```
@@ -241,22 +242,26 @@ document_verification_system/
 ✅ Role-Based Access Control  
 ✅ Audit Logging  
 ✅ BCrypt Password Hashing  
-✅ Secure Password Reset Workflow  
+✅ Secure Password Reset Workflow
 
 ---
 
 # Local Development Setup
 
-## Backend
-
-Clone the repository:
+## Clone Repository
 
 ```bash
 git clone https://github.com/HuzaifaAIDev/document-verification-system.git
-cd document-verification-system/backend
+cd document-verification-system
 ```
 
-Create virtual environment:
+---
+
+## Backend Setup
+
+```bash
+cd backend
+```
 
 ### Windows
 
@@ -290,74 +295,42 @@ Generate a secure secret key:
 python -c "import secrets; print(secrets.token_urlsafe(48))"
 ```
 
-Add the generated key to:
+Add the generated value to:
 
 ```env
 SECRET_KEY=your-secret-key
 ```
 
-Create the initial administrator account:
+Create the development administrator:
 
 ```bash
 python seed.py
 ```
 
-Default administrator:
+> **Note:** `seed.py` creates a default development administrator account. Change all credentials before deploying to production.
 
-```text
-Email: admin@dvs.local
-Password: Admin@2026
-```
-
-Run the backend:
+Run backend:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Backend:
+Available endpoints:
 
-```text
-http://localhost:8000
-```
-
-Swagger:
-
-```text
-http://localhost:8000/docs
-```
-
-ReDoc:
-
-```text
-http://localhost:8000/redoc
-```
+| Service | URL |
+|---------|-----|
+| Backend | http://localhost:8000 |
+| Swagger | http://localhost:8000/docs |
+| ReDoc | http://localhost:8000/redoc |
 
 ---
 
-## Frontend
-
-Navigate to frontend:
+## Frontend Setup
 
 ```bash
 cd frontend
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Create environment file:
-
-```bash
 cp .env.example .env
-```
-
-Run frontend:
-
-```bash
 npm run dev
 ```
 
@@ -371,15 +344,8 @@ http://localhost:5173
 
 # Docker Deployment
 
-Create environment:
-
 ```bash
 cp backend/.env.example backend/.env
-```
-
-Build and run:
-
-```bash
 docker compose up --build
 ```
 
@@ -418,8 +384,6 @@ alembic downgrade -1
 
 # Running Tests
 
-Backend tests:
-
 ```bash
 cd backend
 pytest
@@ -438,7 +402,7 @@ pytest -v
 | Endpoint | Description |
 |----------|-------------|
 | `/auth` | Authentication and authorization |
-| `/users` | User profile management |
+| `/users` | User management |
 | `/documents` | Document operations |
 | `/verifier` | Verification workflow |
 | `/admin` | Administrative operations |
@@ -447,14 +411,14 @@ pytest -v
 
 # OCR Support
 
-Supported document types:
+Supported file types:
 
 - PDF
 - PNG
 - JPG
 - JPEG
 
-OCR engine:
+OCR Engine:
 
 - Tesseract OCR
 
@@ -473,45 +437,31 @@ Extracted text can be used for:
 
 ### Login Page
 
-```text
-screenshots/login.png
-```
+![Login](screenshots/login.png)
 
 ### OTP Verification
 
-```text
-screenshots/otp.png
-```
+![OTP](screenshots/otp.png)
 
 ### Dashboard
 
-```text
-screenshots/dashboard.png
-```
+![Dashboard](screenshots/dashboard.png)
 
 ### Document Upload
 
-```text
-screenshots/upload.png
-```
+![Upload](screenshots/upload.png)
 
 ### Verification Panel
 
-```text
-screenshots/verifier.png
-```
+![Verifier](screenshots/verifier.png)
 
 ### Admin Dashboard
 
-```text
-screenshots/admin.png
-```
+![Admin](screenshots/admin.png)
 
 ### Audit Logs
 
-```text
-screenshots/audit.png
-```
+![Audit](screenshots/audit.png)
 
 ---
 
@@ -545,12 +495,11 @@ screenshots/audit.png
 
 # Author
 
-## Muhammad Huzaifa
+## Hafiz Muhammad Huzaifa
 
-BS Artificial Intelligence
+**Bachelor of Science in Artificial Intelligence**
 
-GitHub:
-https://github.com/HuzaifaAIDev
+- GitHub: https://github.com/HuzaifaAIDev
 
 ---
 
