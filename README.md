@@ -1,211 +1,252 @@
-# Document Verification System (DVS)
+# 📄 Document Verification System (DVS)
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688)
-![React](https://img.shields.io/badge/React-18-61DAFB)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supported-336791)
-![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED)
-![JWT](https://img.shields.io/badge/Auth-JWT-orange)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge\&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge\&logo=fastapi)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge\&logo=react)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge\&logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge\&logo=docker)
+![JWT](https://img.shields.io/badge/JWT-Authentication-orange?style=for-the-badge)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-An **enterprise-grade full-stack document verification platform** designed for secure document submission, verification, and management workflows.
+An **enterprise-grade full-stack Document Verification System** built with **FastAPI**, **React**, **PostgreSQL**, and **Docker**.
 
-The system provides **role-based access control (RBAC)**, **OTP verification**, **JWT authentication with refresh token rotation**, **OCR-powered document extraction**, **audit logging**, and a modern **React dashboard** for employees, verifiers, and administrators.
+The application enables organizations to securely manage document verification workflows through **Role-Based Access Control (RBAC)**, **JWT Authentication**, **Email OTP Verification**, **OCR-powered document processing**, **Audit Logging**, and a modern responsive dashboard for **Employees**, **Verifiers**, and **Administrators**.
 
-Built using **FastAPI**, **React**, **PostgreSQL**, **Docker**, and industry-standard security practices.
-
----
-
-# Features
-
-## Authentication & Security
-
-- Email/password registration
-- Strong password policy enforcement
-- Email OTP verification
-- JWT access tokens
-- JWT refresh tokens with rotation
-- Token revocation/blacklisting
-- Account lockout after repeated failures
-- Password history validation
-- Forgot-password workflow
-- Security questions verification
-- Date-of-birth verification
-- Password reset email flow
-- BCrypt password hashing
-- Secure password storage
-- Rate limiting
-- Security headers middleware
-- CORS protection
+Designed with scalability, maintainability, and security in mind, this project demonstrates industry-standard backend architecture and modern frontend development practices.
 
 ---
 
-## Role-Based Access Control (RBAC)
+# 🖼️ Application Preview
 
-The system supports three user roles:
-
-| Role | Permissions |
-|------|-------------|
-| Employee | Upload and manage personal documents |
-| Verifier | Verify and reject submitted documents |
-| Admin | Complete system administration |
-
-Self-registration is restricted to employee accounts. Administrators can promote users through the admin dashboard.
+![Admin Dashboard](images_folder/admin_dashboard.jpg)
 
 ---
 
-## Document Management
+# ✨ Table of Contents
 
-- Secure document uploads
-- File type validation
-- MIME validation
-- File size validation
-- Filename sanitization
-- Download documents
-- Delete documents
-- OCR text extraction
-- PDF support
-- Image support
-- Document status tracking
-
----
-
-## Verification Workflow
-
-- Pending verification queue
-- Approve documents
-- Reject documents
-- Verification remarks
-- Verification history
-- Audit trail tracking
+* Overview
+* Key Features
+* Role-Based Access Control
+* Technology Stack
+* System Architecture
+* Project Structure
+* Installation
+* Backend Setup
+* Frontend Setup
+* Docker Deployment
+* Database Migration
+* API Documentation
+* OCR Support
+* Screenshots
+* Security Features
+* Future Improvements
+* Contributing
+* License
+* Author
 
 ---
 
-## Admin Dashboard
+# 🚀 Overview
 
-- User management
-- Role management
-- Account activation/deactivation
-- Document oversight
-- Analytics dashboard
-- Audit log viewer
-- Verification statistics
-- Security monitoring
+The **Document Verification System** simplifies and secures document verification processes by providing separate dashboards for different user roles.
 
----
+Employees can upload and manage their documents, Verifiers can review and approve submitted files, while Administrators have complete control over users, verification workflows, audit logs, and system monitoring.
 
-## Audit Logging
+The application follows modern software engineering practices including:
 
-All sensitive actions are recorded including:
-
-- Login attempts
-- Password changes
-- Document uploads
-- Verification actions
-- User management
-- Role changes
-- Administrative actions
-- Client IP addresses
-- User agent information
+* Clean architecture
+* RESTful APIs
+* Secure authentication
+* Token-based authorization
+* OCR document extraction
+* Comprehensive audit logging
+* Responsive React frontend
+* Docker containerization
 
 ---
 
-## Frontend Features
+# ⭐ Key Features
 
-- React 18
-- Vite
-- TailwindCSS
-- Dark mode
-- Responsive dashboard
-- Glassmorphism UI
-- Animated OTP inputs
-- Charts and analytics
-- Drag-and-drop uploads
-- Role-aware navigation
+## 🔐 Authentication & Security
 
----
-
-# Tech Stack
-
-| Category | Technology |
-|----------|------------|
-| Backend | FastAPI |
-| Frontend | React 18 |
-| Styling | TailwindCSS |
-| Database | PostgreSQL |
-| ORM | SQLAlchemy 2.0 |
-| Validation | Pydantic v2 |
-| Authentication | JWT |
-| Password Hashing | BCrypt |
-| OCR | Tesseract OCR |
-| Migrations | Alembic |
-| Charts | Recharts |
-| Testing | Pytest |
-| Containerization | Docker |
+* Email Registration
+* Secure Login
+* Strong Password Policy
+* Email OTP Verification
+* JWT Authentication
+* Refresh Token Rotation
+* Token Revocation
+* Account Lockout Protection
+* Password History Validation
+* Forgot Password Workflow
+* Security Questions Verification
+* Date of Birth Verification
+* BCrypt Password Hashing
+* Security Headers Middleware
+* Rate Limiting
+* CORS Protection
 
 ---
 
-# System Architecture
+## 👥 Role-Based Access Control (RBAC)
+
+Three independent roles are supported throughout the application.
+
+| Role             | Responsibilities                               |
+| ---------------- | ---------------------------------------------- |
+| 👤 Employee      | Upload and manage personal documents           |
+| ✅ Verifier       | Review, approve and reject submitted documents |
+| 👑 Administrator | Complete system administration and monitoring  |
+
+Administrators can promote users, manage permissions, monitor verification activities, and oversee the entire platform.
+
+---
+
+## 📂 Document Management
+
+* Secure File Upload
+* PDF Support
+* Image Support
+* File Type Validation
+* MIME Validation
+* File Size Validation
+* Filename Sanitization
+* OCR Text Extraction
+* Document Preview
+* Download Documents
+* Delete Documents
+* Verification Status Tracking
+
+---
+
+## ✅ Verification Workflow
+
+The verification lifecycle includes:
+
+* Pending Queue
+* Review Requests
+* Document Approval
+* Document Rejection
+* Verification Remarks
+* Verification History
+* Audit Trail
+
+---
+
+## 👨‍💼 Administration
+
+Administrators have access to:
+
+* User Management
+* Role Management
+* Account Activation
+* Account Deactivation
+* User Profiles
+* Verification Statistics
+* Document Oversight
+* Audit Log Viewer
+* Security Monitoring
+
+---
+
+## 📊 Audit Logging
+
+Every important activity is securely recorded, including:
+
+* User Login
+* Logout
+* Registration
+* Password Changes
+* Password Reset Requests
+* Document Uploads
+* Verification Decisions
+* User Management
+* Role Changes
+* Administrative Operations
+* Client IP Address
+* Browser Information
+
+---
+
+## 🎨 Frontend Features
+
+* React 18
+* Vite
+* Tailwind CSS
+* Responsive Design
+* Dark Mode
+* Glassmorphism UI
+* Animated Components
+* OTP Input Component
+* Charts & Analytics
+* Drag & Drop Uploads
+* Protected Routes
+* Role-Based Navigation
+
+---
+
+# 🛠️ Technology Stack
+
+| Category           | Technology     |
+| ------------------ | -------------- |
+| Backend            | FastAPI        |
+| Frontend           | React 18       |
+| Styling            | Tailwind CSS   |
+| Database           | PostgreSQL     |
+| ORM                | SQLAlchemy 2.0 |
+| Validation         | Pydantic v2    |
+| Authentication     | JWT            |
+| Password Hashing   | BCrypt         |
+| OCR Engine         | Tesseract OCR  |
+| Database Migration | Alembic        |
+| Charts             | Recharts       |
+| Testing            | Pytest         |
+| Containerization   | Docker         |
+| Version Control    | Git & GitHub   |
+
+---
+
+# 🏗️ System Architecture
 
 ```text
-                React Frontend
-                       │
-                       ▼
-                FastAPI Backend
-                       │
-        ┌──────────────┼──────────────┐
-        ▼              ▼              ▼
- Authentication    Business Logic    OCR Service
-        │              │              │
-        └──────────────┼──────────────┘
-                       ▼
-                 SQLAlchemy ORM
-                       │
-                       ▼
-                  PostgreSQL
+                        React Frontend
+                              │
+                              │ REST API
+                              ▼
+                     FastAPI Backend
+                              │
+     ┌───────────────┬───────────────┬───────────────┐
+     ▼               ▼               ▼
+ Authentication   Business Logic   OCR Processing
+     │               │               │
+     └───────────────┼───────────────┘
+                     ▼
+             SQLAlchemy ORM
+                     │
+                     ▼
+               PostgreSQL
 ```
 
 ---
 
-# Project Structure
+# 📁 Project Structure
 
 ```text
-document_verification_system/
-
+document-verification-system/
+│
 ├── backend/
-│   ├── main.py
-│   ├── config.py
-│   ├── database.py
+│   ├── routers/
+│   ├── services/
+│   ├── middleware/
 │   ├── models.py
 │   ├── schemas.py
+│   ├── database.py
+│   ├── config.py
 │   ├── auth.py
 │   ├── dependencies.py
-│   │
-│   ├── routers/
-│   │   ├── auth
-│   │   ├── user
-│   │   ├── document
-│   │   ├── verifier
-│   │   └── admin
-│   │
-│   ├── services/
-│   │   ├── jwt
-│   │   ├── email
-│   │   ├── otp
-│   │   ├── password_reset
-│   │   ├── file
-│   │   ├── ocr
-│   │   └── audit
-│   │
-│   ├── middleware/
-│   │   ├── security
-│   │   ├── audit
-│   │   └── rate_limit
-│   │
-│   ├── alembic/
-│   ├── tests/
-│   ├── seed.py
+│   ├── main.py
 │   ├── requirements.txt
+│   ├── seed.py
 │   ├── Dockerfile
 │   └── .env.example
 │
@@ -213,81 +254,163 @@ document_verification_system/
 │   ├── src/
 │   │   ├── pages/
 │   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
 │   │   ├── context/
-│   │   └── routes/
+│   │   ├── hooks/
+│   │   ├── routes/
+│   │   └── services/
 │   │
+│   ├── public/
 │   ├── package.json
-│   ├── tailwind.config.js
 │   ├── vite.config.js
+│   ├── tailwind.config.js
 │   ├── Dockerfile
 │   └── nginx.conf
 │
-└── docker-compose.yml
+├── images_folder/
+│   ├── admin_dashboard.jpg
+│   ├── employee_dashboard.jpg
+│   ├── verifier_dashboard.jpg
+│   ├── verify_document.jpg
+│   ├── upload_document.jpg
+│   └── ...
+│
+├── docker-compose.yml
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# Security Features
+# 🔒 Security Highlights
 
-✅ JWT Authentication  
-✅ Refresh Token Rotation  
-✅ Token Revocation  
-✅ Password History Enforcement  
-✅ Account Lockout  
-✅ OTP Verification  
-✅ Rate Limiting  
-✅ Security Headers  
-✅ Role-Based Access Control  
-✅ Audit Logging  
-✅ BCrypt Password Hashing  
-✅ Secure Password Reset Workflow
+* ✅ JWT Authentication
+* ✅ Refresh Token Rotation
+* ✅ Email OTP Verification
+* ✅ BCrypt Password Hashing
+* ✅ Secure Password Reset Workflow
+* ✅ Password History Validation
+* ✅ Account Lockout Protection
+* ✅ Role-Based Authorization (RBAC)
+* ✅ Audit Logging
+* ✅ Security Headers
+* ✅ Rate Limiting
+* ✅ CORS Protection
+
+# ⚙️ Local Development Setup
+
+## 📋 Prerequisites
+
+Before running the project, ensure the following software is installed:
+
+| Software                    | Recommended Version |
+| --------------------------- | ------------------- |
+| Python                      | 3.11+               |
+| Node.js                     | 18+                 |
+| npm                         | Latest              |
+| PostgreSQL                  | 15+                 |
+| Git                         | Latest              |
+| Docker Desktop *(Optional)* | Latest              |
+| Tesseract OCR               | Latest              |
 
 ---
 
-# Local Development Setup
-
-## Clone Repository
+# 📥 Clone the Repository
 
 ```bash
 git clone https://github.com/HuzaifaAIDev/document-verification-system.git
+
 cd document-verification-system
 ```
 
 ---
 
-## Backend Setup
+# 🖥️ Backend Setup
+
+Navigate to the backend directory:
 
 ```bash
 cd backend
 ```
 
+---
+
+## Create Virtual Environment
+
 ### Windows
 
 ```bash
 python -m venv .venv
+
 .venv\Scripts\activate
 ```
 
-### Linux/macOS
+### Linux / macOS
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
+
 source .venv/bin/activate
 ```
 
-Install dependencies:
+---
+
+## Install Dependencies
 
 ```bash
+pip install --upgrade pip
+
 pip install -r requirements.txt
 ```
 
-Create environment file:
+---
+
+## Configure Environment Variables
+
+Create a local environment file:
 
 ```bash
 cp .env.example .env
 ```
+
+For Windows (PowerShell), if `cp` is unavailable:
+
+```powershell
+copy .env.example .env
+```
+
+Open the `.env` file and configure the required values.
+
+Example:
+
+```env
+DATABASE_URL=postgresql://username:password@localhost:5432/document_verification
+
+SECRET_KEY=your-generated-secret-key
+
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+REFRESH_TOKEN_EXPIRE_DAYS=7
+
+ALGORITHM=HS256
+
+SMTP_SERVER=smtp.gmail.com
+
+SMTP_PORT=587
+
+SMTP_USERNAME=your-email@gmail.com
+
+SMTP_PASSWORD=your-app-password
+
+EMAIL_FROM=your-email@gmail.com
+
+FRONTEND_URL=http://localhost:5173
+```
+
+> **Important:** Never commit your `.env` file to GitHub. Only commit `.env.example`.
+
+---
+
+## Generate a Secure Secret Key
 
 Generate a secure secret key:
 
@@ -295,42 +418,93 @@ Generate a secure secret key:
 python -c "import secrets; print(secrets.token_urlsafe(48))"
 ```
 
-Add the generated value to:
+Copy the generated key into:
 
 ```env
-SECRET_KEY=your-secret-key
+SECRET_KEY=
 ```
 
-Create the development administrator:
+---
+
+## Create the Development Administrator
+
+Run:
 
 ```bash
 python seed.py
 ```
 
-> **Note:** `seed.py` creates a default development administrator account. Change all credentials before deploying to production.
+This script creates the default administrator account for local development.
 
-Run backend:
+> Change the default credentials before deploying the application to production.
+
+---
+
+## Run the Backend Server
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Available endpoints:
+Backend will be available at:
 
-| Service | URL |
-|---------|-----|
-| Backend | http://localhost:8000 |
-| Swagger | http://localhost:8000/docs |
-| ReDoc | http://localhost:8000/redoc |
+```text
+http://localhost:8000
+```
 
 ---
 
-## Frontend Setup
+# 📚 API Documentation
+
+FastAPI automatically generates interactive API documentation.
+
+| Documentation  | URL                                |
+| -------------- | ---------------------------------- |
+| Swagger UI     | http://localhost:8000/docs         |
+| ReDoc          | http://localhost:8000/redoc        |
+| OpenAPI Schema | http://localhost:8000/openapi.json |
+
+---
+
+# 🌐 Frontend Setup
+
+Open a new terminal.
+
+Navigate to the frontend:
 
 ```bash
 cd frontend
+```
+
+---
+
+## Install Dependencies
+
+```bash
 npm install
+```
+
+---
+
+## Configure Frontend Environment
+
+Create the environment file:
+
+```bash
 cp .env.example .env
+```
+
+Example:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+---
+
+## Start Development Server
+
+```bash
 npm run dev
 ```
 
@@ -342,39 +516,94 @@ http://localhost:5173
 
 ---
 
-# Docker Deployment
+# 🐳 Docker Deployment
 
-```bash
-cp backend/.env.example backend/.env
-docker compose up --build
-```
-
-Services:
-
-| Service | URL |
-|---------|-----|
-| Frontend | http://localhost:5173 |
-| Backend | http://localhost:8000 |
-| Swagger | http://localhost:8000/docs |
-| PostgreSQL | localhost:5432 |
+Docker allows the complete application stack to run inside containers.
 
 ---
 
-# Database Migrations
-
-Create migration:
+## Configure Backend Environment
 
 ```bash
-alembic revision --autogenerate -m "migration"
+cp backend/.env.example backend/.env
 ```
 
-Apply migration:
+Update all required environment variables before deployment.
+
+---
+
+## Build Containers
+
+```bash
+docker compose build
+```
+
+---
+
+## Start Containers
+
+```bash
+docker compose up
+```
+
+or
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Run in Detached Mode
+
+```bash
+docker compose up -d
+```
+
+---
+
+## Stop Containers
+
+```bash
+docker compose down
+```
+
+---
+
+# 🗄️ Services
+
+| Service         | URL                        |
+| --------------- | -------------------------- |
+| React Frontend  | http://localhost:5173      |
+| FastAPI Backend | http://localhost:8000      |
+| Swagger UI      | http://localhost:8000/docs |
+| PostgreSQL      | localhost:5432             |
+
+---
+
+# 🗃️ Database Migration
+
+This project uses **Alembic** for version-controlled database migrations.
+
+---
+
+## Generate Migration
+
+```bash
+alembic revision --autogenerate -m "Initial Migration"
+```
+
+---
+
+## Apply Migration
 
 ```bash
 alembic upgrade head
 ```
 
-Rollback migration:
+---
+
+## Roll Back One Migration
 
 ```bash
 alembic downgrade -1
@@ -382,135 +611,396 @@ alembic downgrade -1
 
 ---
 
-# Running Tests
+## Show Current Migration
+
+```bash
+alembic current
+```
+
+---
+
+# 🧪 Running Tests
+
+Navigate to the backend directory:
 
 ```bash
 cd backend
+```
+
+Run all tests:
+
+```bash
 pytest
 ```
 
-Verbose mode:
+Run with verbose output:
 
 ```bash
 pytest -v
 ```
 
----
+Generate a coverage report (if configured):
 
-# API Modules
-
-| Endpoint | Description |
-|----------|-------------|
-| `/auth` | Authentication and authorization |
-| `/users` | User management |
-| `/documents` | Document operations |
-| `/verifier` | Verification workflow |
-| `/admin` | Administrative operations |
+```bash
+pytest --cov=.
+```
 
 ---
 
-# OCR Support
+# 📡 API Modules
 
-Supported file types:
-
-- PDF
-- PNG
-- JPG
-- JPEG
-
-OCR Engine:
-
-- Tesseract OCR
-
-Extracted text can be used for:
-
-- Verification
-- Search
-- Analytics
-- Validation
+| Endpoint     | Description                           |
+| ------------ | ------------------------------------- |
+| `/auth`      | User authentication and authorization |
+| `/users`     | User profile management               |
+| `/documents` | Upload and document management        |
+| `/verifier`  | Document verification workflow        |
+| `/admin`     | Administrative operations             |
 
 ---
 
-# Screenshots
+# 🔄 Verification Workflow
 
-> Add screenshots after deployment.
-
-### Login Page
-
-![Login](screenshots/login.png)
-
-### OTP Verification
-
-![OTP](screenshots/otp.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### Document Upload
-
-![Upload](screenshots/upload.png)
-
-### Verification Panel
-
-![Verifier](screenshots/verifier.png)
-
-### Admin Dashboard
-
-![Admin](screenshots/admin.png)
-
-### Audit Logs
-
-![Audit](screenshots/audit.png)
+```text
+Employee
+    │
+    ▼
+Upload Document
+    │
+    ▼
+Pending Verification
+    │
+    ▼
+Verifier Review
+    │
+ ┌──┴────────────┐
+ │               │
+ ▼               ▼
+Approved      Rejected
+ │               │
+ ▼               ▼
+Visible to User with Status
+```
 
 ---
 
-# Future Improvements
+# 📁 Supported File Types
 
-- Multi-factor authentication
-- Redis caching
-- Elasticsearch integration
-- Document watermarking
-- Virus scanning
-- Kubernetes deployment
-- CI/CD pipeline
-- WebSocket notifications
-- AI-powered document validation
-- Blockchain-based verification
+The application currently supports:
+
+* PDF (.pdf)
+* PNG (.png)
+* JPG (.jpg)
+* JPEG (.jpeg)
+
+Additional formats can be integrated in future releases.
 
 ---
 
-# Production Recommendations
+# 🔍 OCR Processing
 
-- Enable HTTPS
-- Configure secure cookies
-- Use managed PostgreSQL
-- Enable automated backups
-- Configure production SMTP
-- Rotate secrets regularly
-- Enable centralized logging
-- Add monitoring and alerting
+The system integrates **Tesseract OCR** for extracting text from uploaded documents.
+
+Extracted text can be utilized for:
+
+* Document verification
+* Search functionality
+* Metadata extraction
+* Data validation
+* Future AI-powered document analysis
+
+OCR supports both scanned images and PDF documents.
+
+
+# 📸 Application Screenshots
+
+The following screenshots demonstrate the primary workflows and interfaces available within the Document Verification System.
 
 ---
 
-# Author
+## 🔐 Sign In
+
+![Sign In](images_folder/signin.jpg)
+
+---
+
+## 📝 Sign Up
+
+![Sign Up](images_folder/signup.jpg)
+
+---
+
+## 🔑 Reset Password
+
+![Reset Password](images_folder/reset_password.jpg)
+
+---
+
+## 👤 Employee Dashboard
+
+![Employee Dashboard](images_folder/employee_dashboard.jpg)
+
+---
+
+## 📤 Upload Document
+
+![Upload Document](images_folder/upload_document.jpg)
+
+---
+
+## 📂 My Documents
+
+![My Documents](images_folder/my_documents.jpg)
+
+---
+
+## 👤 Employee Profile
+
+![Employee Profile](images_folder/employee_profile.jpg)
+
+---
+
+## ✅ Verifier Dashboard
+
+![Verifier Dashboard](images_folder/verifier_dashboard.jpg)
+
+---
+
+## 📄 Verify Document
+
+![Verify Document](images_folder/verify_document.jpg)
+
+---
+
+## 📜 Verification History
+
+![Verification History](images_folder/verification_history.jpg)
+
+---
+
+## 👥 Verifier User Details
+
+![Verifier User Details](images_folder/verifier_user_detail.jpg)
+
+---
+
+## 👤 Verifier Profile
+
+![Verifier Profile](images_folder/verifier_profile.jpg)
+
+---
+
+## 👑 Admin Dashboard
+
+![Admin Dashboard](images_folder/admin_dashboard.jpg)
+
+---
+
+## ⚙️ Admin Console
+
+![Admin Console](images_folder/admin_console.jpg)
+
+---
+
+## 👥 User Management
+
+![User Management](images_folder/user_management.jpg)
+
+---
+
+## 📋 Audit Logs
+
+![Audit Logs](images_folder/audit_logs.jpg)
+
+---
+
+## 👤 Admin Profile
+
+![Admin Profile](images_folder/admin_profile.jpg)
+
+---
+
+# 🔒 Security Features
+
+The application has been designed with security as a primary objective.
+
+### Authentication
+
+* JWT Access Tokens
+* Refresh Token Rotation
+* Secure Logout
+* Token Revocation
+* Email OTP Verification
+* Password Reset Workflow
+
+### Password Protection
+
+* BCrypt Password Hashing
+* Password History Validation
+* Strong Password Policy
+* Account Lockout Protection
+
+### API Security
+
+* Role-Based Access Control (RBAC)
+* Security Headers Middleware
+* CORS Protection
+* Request Validation
+* Rate Limiting
+
+### Monitoring
+
+* Audit Logging
+* User Activity Tracking
+* Login History
+* Verification History
+* Administrative Action Logging
+
+---
+
+# 🚀 Future Improvements
+
+The project roadmap includes several enhancements aimed at improving scalability, security, and user experience.
+
+## Planned Features
+
+* Multi-Factor Authentication (MFA)
+* Redis Caching
+* Elasticsearch Integration
+* AI-Powered Document Validation
+* Automatic Fraud Detection
+* Virus & Malware Scanning
+* Digital Signatures
+* Watermarking
+* WebSocket Notifications
+* Email Notifications
+* SMS Notifications
+* Kubernetes Deployment
+* CI/CD Pipeline
+* Cloud Storage Integration
+* Background Task Processing
+* Monitoring with Prometheus & Grafana
+* API Rate Analytics
+* Mobile Application Support
+
+---
+
+# 🌍 Production Deployment Recommendations
+
+Before deploying to production, it is recommended to:
+
+* Enable HTTPS using a trusted SSL certificate.
+* Store secrets securely using environment variables or a secrets manager.
+* Use a managed PostgreSQL database.
+* Configure automated database backups.
+* Use a production SMTP provider.
+* Enable centralized logging.
+* Monitor application health.
+* Configure reverse proxy (Nginx or Traefik).
+* Enable firewall rules.
+* Rotate secrets regularly.
+* Restrict CORS origins.
+* Configure secure cookies.
+* Enable automatic security updates.
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome and appreciated.
+
+If you would like to contribute:
+
+1. Fork the repository.
+2. Create a feature branch.
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push your branch.
+
+```bash
+git push origin feature/your-feature
+```
+
+5. Open a Pull Request.
+
+Please ensure that:
+
+* Code follows the existing style.
+* New functionality includes appropriate tests where applicable.
+* Documentation is updated for any new features.
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+See the `LICENSE` file for additional details.
+
+---
+
+# 👨‍💻 Author
 
 ## Hafiz Muhammad Huzaifa
 
 **Bachelor of Science in Artificial Intelligence**
 
-- GitHub: https://github.com/HuzaifaAIDev
+Passionate about building secure, scalable, and production-ready AI and Full-Stack applications using modern software engineering practices.
+
+### Connect With Me
+
+* **GitHub:** https://github.com/HuzaifaAIDev
 
 ---
 
-# License
+# ⭐ Acknowledgements
 
-This project is licensed under the MIT License.
+Special thanks to the open-source community and the maintainers of the technologies used in this project.
 
-See the [LICENSE](LICENSE) file for details.
+This project is powered by:
+
+* FastAPI
+* React
+* PostgreSQL
+* SQLAlchemy
+* Pydantic
+* Docker
+* Tesseract OCR
+* Tailwind CSS
+* Alembic
+* Pytest
 
 ---
 
-# Support
+# 💡 Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you find this project helpful:
+
+⭐ Star the repository
+
+🍴 Fork the repository
+
+🐞 Report issues
+
+💬 Share suggestions
+
+📢 Share the project with others
+
+Your support helps improve the project and motivates future development.
+
+---
+
+# ❤️ Thank You
+
+Thank you for taking the time to explore the **Document Verification System**.
+
+Feedback, suggestions, and contributions are always welcome.
